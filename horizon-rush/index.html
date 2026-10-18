@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Horizon Rush 极速地平线 —— 开放公路竞速游戏，支持玩家驾驶与 AI 车手对赛。">
+  <title>HORIZON RUSH · 极速地平线</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 关键内联样式：保证 JS 未就绪时也不白屏、不滚动 */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #05060a;
+      color: #f5f6fa;
+    }
+    #game {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      outline: none;
+      background: #05060a;
+    }
+    #ui-root {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 10;
+      font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    #fatal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      background: rgba(8, 6, 14, 0.96);
+      color: #ffd7d7;
+      font-family: "Segoe UI", "Microsoft YaHei", monospace;
+      text-align: left;
+    }
+    #fatal .fatal-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ff8a5c;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    #fatal pre {
+      max-width: 92vw;
+      max-height: 60vh;
+      overflow: auto;
+      padding: 16px 20px;
+      border: 1px solid rgba(255, 138, 92, 0.45);
+      border-radius: 10px;
+      background: rgba(255, 138, 92, 0.06);
+      font-size: 12px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    #fatal .fatal-tip {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #c9c2d8;
+      max-width: 760px;
+      line-height: 1.7;
+    }
+    noscript {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #05060a;
+      color: #fff;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="game" tabindex="0" aria-label="Horizon Rush 游戏画面"></canvas>
+  <div id="ui-root"></div>
+
+  <div id="fatal" role="alert">
+    <div class="fatal-title">游戏启动失败 · HORIZON RUSH</div>
+    <pre id="fatal-detail"></pre>
+    <div class="fatal-tip">
+      请确认浏览器为 Chrome / Edge 110+，并且 js/ 下所有文件与 index.html 完整。
+      如需反馈问题，请把上面的错误信息与浏览器控制台（F12）截图发给开发者。
+    </div>
+  </div>
+
+  <noscript>本游戏需要启用 JavaScript 才能运行。</noscript>
+
+  <!-- 加载顺序固定：config → util → audio → track → car → ai → render → ui → game → selftest -->
+  <script src="js/config.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/track.js"></script>
+  <script src="js/car.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/selftest.js"></script>
+</body>
+</html>
