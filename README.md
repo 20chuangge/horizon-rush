@@ -1,9 +1,28 @@
 # HORIZON RUSH · 极速地平线
 
+**HORIZON RUSH** is a **zero-dependency pseudo-3D open-road racing game** — open `index.html` in a browser and play.  
+No install, no build, no network: every car, track, scene and sound is procedurally generated.  
+Every car can be driven by its own **AI racer** — watch a whole AI race, or take over at any time.
+
 > 一款零依赖、打开即玩的 **伪 3D 开放公路竞速游戏**，对标《极限竞速：地平线》的公路竞速与嘉年华氛围。  
 > 支持 **玩家手动驾驶**，也支持 **给每一辆车接入 AI 车手，让 AI 自己比赛**（全 AI 观战 / 随时接管）。
 
 ![状态](https://img.shields.io/badge/状态-可游玩-7dffb0) ![依赖](https://img.shields.io/badge/依赖-零外部依赖-39e6ff) ![平台](https://img.shields.io/badge/平台-浏览器-ff8a4c)
+
+---
+
+## 目录
+
+- [快速开始](#快速开始)
+- [游戏模式](#游戏模式)
+  - [AI 相关玩法（核心特色）](#ai-相关玩法核心特色)
+- [操作](#操作)
+- [内容一览](#内容一览)
+- [内置自检（重要）](#内置自检重要)
+- [技术架构](#技术架构)
+- [发布到公网（GitHub Pages / Netlify）](#发布到公网github-pages--netlify)
+- [已知限制](#已知限制)
+- [常见问题](#常见问题)
 
 ---
 
